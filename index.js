@@ -1,8 +1,8 @@
 const Discord = require("discord.js")
 const fs = require('fs');
 const DBL = require("dblapi.js")
-const client = new Discord.Client({ disableEveryone: true/*, ws: { intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] } */ })
-//const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0NzQ2NzczNTg2NDE4MDgzNiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA5MTY5NjI1fQ.5gL83XWWXlrSGphJSXffhj3sQgzfaCz6iVF3_ql-RjY', client)
+const client = new Discord.Client({ disableEveryone: true, ws: { intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] } })
+const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0NzQ2NzczNTg2NDE4MDgzNiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA5MTY5NjI1fQ.5gL83XWWXlrSGphJSXffhj3sQgzfaCz6iVF3_ql-RjY', client)
 const { prefix, token } = require("./config.json")
 const Client = new (require("./src/functions.js"))
 const settings = new (require("quick.db")).table("settings")

@@ -1,1 +1,6 @@
 node_modules
+package-lock.json
+ChemistryBot.zip
+src/ChemistryBotAssets
+src/chemistryBotDescriptionMarkdown.html
+src/old.pick
