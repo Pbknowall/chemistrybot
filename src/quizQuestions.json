@@ -1,0 +1,620 @@
+[
+    {
+        "question": "What is the most abundant element in the universe?",
+        "options": [
+            "Hydrogen",
+            "Helium",
+            "Oxygen"
+        ],
+        "correct": "Hydrogen"
+    },
+    {
+        "question": "Which element makes up the biggest fraction of Earth’s mass?",
+        "options": [
+            "Oxygen",
+            "Iron",
+            "Silicon"
+        ],
+        "correct": "Iron"
+    },
+    {
+        "question": "Which element makes up most of the weight of a human body?",
+        "options": [
+            "Carbon",
+            "Oxygen",
+            "Hydrogen"
+        ],
+        "correct": "Oxygen"
+    },
+    {
+        "question": "Apart from mercury, which other element is liquid at 20°C?",
+        "options": [
+            "Fluorine",
+            "Bromine",
+            "Sulphur"
+        ],
+        "correct": "Bromine"
+    },
+    {
+        "question": "A metallic form of which element was created for the first time in 2017?",
+        "options": [
+            "Carbon",
+            "Fluorine",
+            "Hydrogen"
+        ],
+        "correct": "Hydrogen"
+    },
+    {
+        "question": "Which element is used as a coolant in MRI scanners and the Large Hadron Collider?",
+        "options": [
+            "Helium",
+            "Neon",
+            "Nitrogen"
+        ],
+        "correct": "Helium"
+    },
+    {
+        "question": "Which noble gas has been described as the perfect anaesthetic?",
+        "options": [
+            "Argon",
+            "Radon",
+            "Xenon"
+        ],
+        "correct": "Xenon"
+    },
+    {
+        "question": "Which element is a treatment for mood disorders and a major component of batteries?",
+        "options": [
+            "Lithium",
+            "Magnesium",
+            "Phosphorus"
+        ],
+        "correct": "Lithium"
+    },
+    {
+        "question": "Which element triggers muscle contraction when it is released from a store inside cells called the sarcoplasmic reticulum?",
+        "options": [
+            "Sodium",
+            "Calcium",
+            "Potassium"
+        ],
+        "correct": "Calcium"
+    },
+    {
+        "question": "Marie Curie discovered radium and which other element?",
+        "options": [
+            "Francium",
+            "Polonium",
+            "Uranium"
+        ],
+        "correct": "Polonium"
+    },
+    {
+        "question": "The UK has a 112-tonne stockpile of which element, most of which is kept in Sellafield, Cumbria?",
+        "options": [
+            "Gold",
+            "Copper",
+            "Plutonium"
+        ],
+        "correct": "Plutonium"
+    },
+    {
+        "question": "Which element’s abundance in rock strata is taken to be evidence of a meteorite impact?",
+        "options": [
+            "Iridium",
+            "Molybdenum",
+            "Selenium"
+        ],
+        "correct": "Iridium"
+    },
+    {
+        "question": "What is the only element named after a person who is still living in 2019?",
+        "options": [
+            "Oganesson",
+            "Seaborgium",
+            "Lawrencium"
+        ],
+        "correct": "Oganesson"
+    },
+    {
+        "question": "Which element is most commonly mixed with iron to make steel?",
+        "options": [
+            "Tin",
+            "Nickel",
+            "Carbon"
+        ],
+        "correct": "Carbon"
+    },
+    {
+        "question": "Which element is used in nuclear power stations because it does not absorb neutrons?",
+        "options": [
+            "Zirconium",
+            "Palladium",
+            "Technetium"
+        ],
+        "correct": "Zirconium"
+    },
+    {
+        "question": "Bauxite is the main source of which element?",
+        "options": [
+            "Aluminium",
+            "Copper",
+            "Magnesium"
+        ],
+        "correct": "Aluminium"
+    },
+    {
+        "question": "One of the essential minerals in the human body is salt. How much salt (NaCl) is in the average adult human body?",
+        "options": [
+            "1 kilogram",
+            "500 grams",
+            "250 grams",
+            "practically none"
+        ],
+        "fact": "The average adult human body contains about 250 grams of salt, which is just over half a pound. If you don't have enough salt, your body suffers an electrolyte imbalance called hyponatremia.",
+        "correct": "250 grams"
+    },
+    {
+        "question": "If you fill a glass to the brim with ice water and the ice melts, what will happen?",
+        "options": [
+            "The glass will over flow as the ice turns to water.",
+            "The level of water in the glass will remain unchanged as the ice melts.",
+            "The water level will drop slightly as the ice melts.",
+            "I'll never find out because I'll drink the water or walk away before anything happens."
+        ],
+        "fact": "One interesting property of water is that it achieves maximum density as a liquid, not as a solid. So, ice is less dense than water and floats. When it melts, it becomes more dense. More mass per unit volume means the level of the liquid drops slightly",
+        "correct": "The water level will drop slightly as the ice melts."
+    },
+    {
+        "question": "The symbol Sb stands for stibnum or stibnite. What is the modern name of this element?",
+        "options": [
+            "Arsenic",
+            "Tin",
+            "Antimony",
+            "Samarium",
+            "Seaborgium"
+        ],
+        "fact": "Stibnum is the old name for antimony. Be careful you don't confuse the symbol with Sn for tin (a common tricky chemistry test \"question\"). Tin is safe enough to use to make cans for food. Antimony and most of its compounds are toxic.",
+        "correct": "Antimony"
+    },
+    {
+        "question": "Water-based liquids can be described as acidic, neutral, or basic, with respect to pH. Which of these describes milk?",
+        "options": [
+            "Slightly Acidic",
+            "Strong Acid",
+            "Neutral",
+            "Slightly Basic", 
+            "Milk does not have a pH"
+        ],
+        "fact": "Milk is close to a neutral pH, but it's slightly acidic thanks in part to the lactic acid it contains.",
+        "correct": "Slightly Acidic"
+    },
+    {
+        "question": "DNA codes for proteins, which are the building blocks of organisms. What is the most abundant protein in the human body?",
+        "options": [
+            "Tubulin",
+            "Albumin",
+            "Collagen",
+            "Keratin"
+        ],
+        "fact": "You'll find keratin primarily in your hair, nails, and skin, but the most abundant protein in humans is collagen, which is found in bone and cartilage. Both proteins are strong and flexible.",
+        "correct": "Collagen"
+    },
+    {
+        "question": "Noble gases are inert because they have completed outer electron shells. Which of these elements isn't a noble gas?",
+        "options": [
+            "Helium",
+            "Argon",
+            "Chlorine",
+            "Krypton"
+        ],
+        "fact": "Chlorine is not a noble gas. It's one electron shy of a full octet, so unlike the noble gases, it's highly reactive.",
+        "correct": "Chlorine"
+    },
+    {
+        "question": "What is the most common isotope of hydrogen?",
+        "options": [
+            "Protium",
+            "Deuterium",
+            "Tritum",
+            "Hydrogen only has one isotope!"
+        ],
+        "fact": "Most of the hydrogen in the world is protium (one proton, no neutrons), but some deuterium and tritium occurs, too. Tritium is radioactive. Deuterium is not radioactive and is the form of hydrogen found in heavy water.",
+        "correct": "Protium"
+    },
+    {
+        "question": "You can't live without water! What is its chemical formula?",
+        "options": [
+            "H2",
+            "O2",
+            "H2O",
+            "H2O2"
+        ],
+        "fact": "You didn't miss this one, right? Water is good old H2O!",
+        "correct": "H2O"
+    },
+    {
+        "question": "Who is credited with the invention of the modern periodic table?",
+        "options": [
+            "Nobel",
+            "Lavoisier",
+            "Mendel",
+            "Mendeleev"
+        ],
+        "fact": "Mendeleev (sometimes spelled Mendeleyev) is credited with creating the modern periodic table, although his table was based on increasing atomic mass rather than atomic number. Mendeleev's table grouped elements according to common properties and periodic trends.",
+        "correct": "Mendeleev"
+    },
+    {
+        "question": "Which of these elements is a nonmetal?",
+        "options": [
+            "Sulfur",
+            "Manganese",
+            "Aluminum",
+            "Beryllium"
+        ],
+        "fact": "Sulfur is a nonmetal. It's yellow and lacks a metallic luster.",
+        "correct": "Sulfur"
+    },
+    {
+        "question": "Organic chemistry is the study of the compounds that make up living organisms. All organic molecules contain:",
+        "options": [
+            "Carbon Only",
+            "Carbon and Nitrogen",
+            "Carbon and Hydrogen",
+            "Carbon, Hydrogen, and Oxygen"
+        ],
+        "fact": "Not all compounds that contain carbon are organic. An example of an inorganic carbon compound is carbon dioxide. All organics contain both carbon and hydrogen. A quasi-exception would be carbon tetrachloride, which is an organic solvent. It's not actually organic, but it is nonpolar so it dissolves organic molecules.",
+        "correct": "Carbon and Hydrogen"
+    },
+    {
+        "question": "The symbol Ag stands for which element?",
+        "options": [
+            "Gallium",
+            "Magnesium",
+            "Gold",
+            "Silver"
+        ],
+        "fact": "Ag stands for argentum, which is an old name for silver. The term \"argent\" survives, meaning silvery.",
+        "correct": "Silver"
+    },
+    {
+        "question": "Three of the most common states of matter are solids, liquids, and gases. A liquid has:",
+        "options": [
+            "a defined volume, but not a defined shape",
+            "a definite shape, but no defined volume",
+            "a definite volume and shape",
+            "no defined volume or shape"
+        ],
+        "fact": "A liquid takes the shape of its container (no defined shape), but has a fairly constant volume (at least compared to a gas). The state of matter of a substances is due to the kinetic energy of its components. With enough energy, atoms and molecules are less strongly bound to each other.",
+        "correct": "a defined volume, but not a defined shape"
+    },
+    {
+        "question": "You can't live without iron. Where in the body is most of the iron located?",
+        "options": [
+            "your brain",
+            "your skin",
+            "your bones",
+            "your blood"
+        ],
+        "fact": "Most of the body's iron is locked up in the hemoglobin found in red blood cells, used for oxygen transport.",
+        "correct": "your blood"
+    },
+    {
+        "question": "A mole contains Avogadro's number of items. What is Avogadro's number?",
+        "options": [
+            "6023",
+            "6.023 x 10^23",
+            "6.02 x 10^-23",
+            "3 x 10^8"
+        ],
+        "fact": "Avogadro's number is huge! The reason chemists use 6.02 x 10^23 to define a unit is to avoid having to work with crazy-large numbers.",
+        "correct": "6.023 x 10^23"
+    },
+    {
+        "question": "What do you call an atom that has more protons than electrons?",
+        "options": [
+            "a molecule",
+            "an isotope",
+            "an anion",
+            "a cation"
+        ],
+        "fact": "If an atom has more protons than electrons, it has a net positive charge. This is a cation, which you can remember because the \"t\" in cation resembles a \"+\" sign for positive.",
+        "correct": "a cation"
+    },
+    {
+        "question": "All of the following are amino acids except:",
+        "options": [
+            "Tryptophan",
+            "Leucine",
+            "Tyrosine",
+            "Adenine"
+        ],
+        "fact": "Adenine is a nucleic acid and not an amino acid.",
+        "correct": "Adenine"
+    },
+    {
+        "question": "A drop of food coloring spreading out in a cup of water is an example of which transport process?",
+        "options": [
+            "Diffusion",
+            "Osmosis",
+            "Vapor Pressure",
+            "Effusion"
+        ],
+        "fact": "Food coloring dispersing in water is an example of diffusion. Osmosis involves water, but there has to be a semipermeable membrane, too.",
+        "correct": "Diffusion"
+    },
+    {
+        "question": "In a solution of saltwater (a saline solution), salt is the:",
+        "options": [
+            "Solute",
+            "Solvent",
+            "Colloid",
+            "Sol"
+        ],
+        "fact": "Salt is the solute because it dissolves in the solvent (water). In a mixture of two fluids, the solute is present in lesser quantity compared with the solvent.",
+        "correct": "Solute"
+    },
+    {
+        "question": "All of the following elements are liquids around room temperature except which one?",
+        "options": [
+            "Gallium",
+            "Magnesium",
+            "Bromine",
+            "Mercury"
+        ],
+        "fact": "Bromine and mercury are liquid at room temperature. You can melt gallium in the palm of your hand. If you put pure magnesium in your hand, it may react with the water in your skin and ignite, but it won't melt.",
+        "correct": "Magnesium"
+    },
+
+
+
+
+
+
+
+
+
+
+    {
+        "question": "What's the lightest element in the periodic table?",
+        "options": [
+            "Helium",
+            "Hydrogen",
+            "Air",
+            "Neutrons"
+        ],
+        "fact": "With an atomic weight of 1.00794, hydrogen is the lightest element in the periodic table. Atomic weight is the average mass of atoms of an element. While all atoms of an element have the same number of protons, different versions of an element (isotopes) can have extra neutrons, which makes them heavier.",
+        "correct": "Hydrogen"
+    },
+    {
+        "question": "What is the atomic number of carbon?",
+        "options": [
+            "2",
+            "6",
+            "12",
+            "14"
+        ],
+        "fact": "Atomic number is the number of protons in atoms of an element. Carbon has an atomic number of 6, so all carbon atoms have six protons. Neutral atoms of carbon (those that haven't gained or lost electrons) have six electrons, and 99 per cent of carbon atoms also have six neutrons.",
+        "correct": "6"
+    },
+    {
+        "question": "Which element in the periodic table was named in honour of physicist Albert Einstein?",
+        "options": [
+            "Albertium",
+            "Relativium",
+            "Physicsium",
+            "Einsteinium"
+        ],
+        "fact": "Einsteinium, which has the chemical symbol 'Es' and atomic number 99, was identified in 1954 in debris from the first hydrogen bomb test carried out under the name operation Ivy. Because of its large number of protons and neutrons it's too unstable to exist in nature, so is only produced in nuclear reactions.",
+        "correct": "Einsteinium"
+    },
+    {
+        "question": "Which of the following is the newest element to be discovered and synthesised?",
+        "options": [
+            "Flerovium",
+            "Ununpentium",
+            "Livermorium",
+            "Ununseptium"
+        ],
+        "fact": "First detected in 2010, super-heavy element 117 was confirmed in 2014 when four atoms were created. In the near future, a committee comprising members of the international unions of pure and applied physics and chemistry will meet to decide whether further experiments are needed before adding it to the periodic table. For now it will remain known by its temporary name Ununseptium (Uus), or one-one-seven.",
+        "correct": "Ununseptium"
+    },
+    {
+        "question": "Which of the following is a noble gas?",
+        "options": [
+            "Nitrogen",
+            "Oxygen",
+            "Argon",
+            "Carbon dioxide"
+        ],
+        "fact": "Noble gases are found in the far right hand column of the periodic table. They're called noble because their atoms have stable configurations of electrons and they won't normally react with other elements to form compounds. Smug gases may have been a more appropriate name. There are six naturally occurring noble gases: argon, helium, krypton (yes, it is real but it won't affect your superpowers), neon, radon, and xenon.",
+        "correct": "Argon"
+    },
+    {
+        "question": "Which of the following has the highest pH value?",
+        "options": [
+            "Lime juice",
+            "Wine",
+            "Water",
+            "Caustic soda"
+        ],
+        "fact": "pH is a measure of the concentration of hydrogen ions in a solution. The he lower the pH, the higher the concentration of hydrogen ions, and the more acidic a solution is. Alkaline or basic solutions have lower concentrations of hydrogen ions, and a pH above 7. Caustic soda is a strong alkali, with a pH of 14. Water has a neutral pH (7), wine is slightly acidic with a pH range of 2.3 to 4.2, and lime juice, the most acidic of the four, has a pH range of 2.2 to 2.4.",
+        "correct": "Caustic soda"
+    },
+    {
+        "question": "What kind of element would you find on the far left-hand side of the periodic table?",
+        "options": [
+            "A metal",
+            "A halogen",
+            "A gas",
+            "A negative ion"
+        ],
+        "fact": "All elements on the left and middle of the periodic table are metals. Non-metals, including elements that are gases at room temperature, are on the right-hand side. Halogens are gases found near the far-right of the table in column seven. Ions are charged forms of elements — atoms that have gained or lost electrons. All metals form positive ions; negative ions are only formed from non-metals and their compounds.",
+        "correct": "A metal"
+    },
+    {
+        "question": "Which of the following is not produced if you mix vinegar (an acid) and sodium bicarbonate (an alkali, or base) together?",
+        "options": [
+            "Water",
+            "Salt",
+            "Carbon dioxide",
+            "Air"
+        ],
+        "fact": "Whenever acids and bases react they form a salt (in this case sodium acetate, CH3COONa) and water. (A salt is a compound containing a metal and one or more non-metals — sodium chloride is the most commonly known salt). In this reaction carbon dioxide gas is also given off — and produces the well known bubbles or 'rocket' propulsion.",
+        "correct": "Air"
+    },
+    {
+        "question": "Which were the first elements to form after the Big Bang started to cool?",
+        "options": [
+            "Uranium and plutonium",
+            "Carbon and silicon",
+            "Oxygen and nitrogen",
+            "Hydrogen and helium"
+        ],
+        "fact": "Scientists believe hydrogen and helium were the first elements to form out of the quark-gluon plasma that was produced in the Big Bang. All other elements in the universe are formed in nuclear fusion reactions that happen inside stars. Smaller elements like hydrogen and helium are fused together to form heavier atoms with more protons — atoms of different elements. All the atoms in the air we breathe, the clothes we wear, and the silicon in our computers was formed in a star that lived and died long ago.",
+        "correct": "Hydrogen and helium"
+    },
+    {
+        "question": "What are the most common elements in the human body?",
+        "options": [
+            "Phosphorus, nitrogen, calcium",
+            "Sulfur, sodium, magnesium",
+            "Copper, zinc, selenium",
+            "Oxygen, carbon and hydrogen"
+        ],
+        "fact": "Oxygen and hydrogen (mostly as water) together with carbon are by far the most common elements in the body accounting for some 93 percent of the body's total mass. Adding three more elements — nitrogen calcium and phosphorus — accounts for 99 percent of the body's mass.",
+        "correct": "Oxygen, carbon and hydrogen"
+    },
+    {
+        "question": "What is the pH in the esophagus?",
+        "options": [
+            "Basic",
+            "Acidic",
+            "Neutral"
+        ],
+        "correct": "Basic"
+    },
+    {
+        "question": "What is the pH in the duodenum?",
+        "options": [
+            "Basic",
+            "Acidic",
+            "Neutral"
+        ],
+        "correct": "Basic"
+    },
+    {
+        "question": "What element exist in Hemoglobin?",
+        "options": [
+            "Magnesium",
+            "Palladium",
+            "Iron"
+        ],
+        "correct": "Iron"
+    },
+    {
+        "question": "What gas binds to our red blood cells more than oxygen hence it's very dangerous?",
+        "options": [
+            "CO2",
+            "CO",
+            "NO2"
+        ],
+        "correct": "CO"
+    },
+    {
+        "question": "What's the main gas in the air?",
+        "options": [
+            "Oxygen",
+            "Nitrogen",
+            "Carbon Dioxide"
+        ],
+        "correct": "Nitrogen"
+    },
+    {
+        "question": "Which of the following is a liquid in room temperature?",
+        "options": [
+            "Methane",
+            "Ethane",
+            "Propane",
+            "Butane",
+            "Pentane"
+        ],
+        "correct": "Pentane",
+        "fact": "The alkanes can exist as gases, liquids, or solids at room temperature. The unbranched alkanes methane, ethane, propane, and butane are gases; pentane through hexadecane are liquids; the homologues larger than hexadecane are solids."
+    },
+    {
+        "question": "Which of the following is conductive?",
+        "options": [
+            "NaCl (aq)",
+            "NaCl (s)",
+            "He",
+            "Carbon"
+        ],
+        "correct": "NaCl (aq)"
+    },
+
+
+
+
+
+
+
+    
+    {
+        "question": "Scurvy is caused by which Vitamin Deficiency?",
+        "options": [
+            "Vitamin B6",
+            "Vitamin B12",
+            "Vitamin C",
+            "Vitamin K"
+        ],
+        "correct": "Vitamin C"
+    },
+    {
+        "question": "What organ is insulin secreted from?",
+        "options": [
+            "Kidney",
+            "Pancreas",
+            "Liver",
+            "Stomach"
+        ],
+        "correct": "Pancreas"
+    },
+    {
+        "question": "What is the largest organ in the human body?",
+        "options": [
+            "Heart",
+            "Brain",
+            "Skin",
+            "Liver"
+        ],
+        "correct": "Skin"
+    },
+    {
+        "question": "What is the largest bone in the body?",
+        "options": [
+            "Scapula",
+            "Femur",
+            "Tarsal"
+        ],
+        "correct": "Femur"
+    },
+    {
+        "question": "How many bones are babies born with?",
+        "options": [
+            "Around 100",
+            "Around 200",
+            "Around 300"
+        ],
+        "correct": "Around 300"
+    },
+    {
+        "question": "How many bones does an average adult have?",
+        "options": [
+            "300",
+            "225",
+            "206"
+        ],
+        "correct": "206"
+    }
+]

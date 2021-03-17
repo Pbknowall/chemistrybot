@@ -1,0 +1,21 @@
+{
+  "name": "chemistrylotto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "Pbknowall",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "dblapi.js": "^2.4.1",
+    "discord.js": "^12.3.1",
+    "mathjs": "^7.2.0",
+    "ms": "^2.1.2",
+    "node-fetch": "^2.6.1",
+    "node-gyp": "^7.1.0",
+    "quick.db": "^7.1.1"
+  }
+}
