@@ -25,7 +25,7 @@ module.exports = {
                 { name: "Invite", value: "[Click](https://discord.com/oauth2/authorize?client_id=747467735864180836&permissions=2146958847&scope=bot)", inline: true },
                 { name: "Servers", value: client.guilds.cache.size, inline: true },
                 { name: "Users", value: users, inline: true },
-                { name: "Creator", value: "Pbknowall#9657", inline: true },
+                { name: "Creator", value: "Pbknowall#0001", inline: true },
                 
             ])
             .setTimestamp()
