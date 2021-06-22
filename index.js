@@ -58,7 +58,8 @@ client.on("ready", () => {
         (function giveaway(first) {
             let max = 14400000, min = 21600000
             if (first) {
-                max = 10000; min = 5;
+                max = 10000; min = 5000;
+                console.log('first')
             }
             //let max = 30000, min = 25000
             let rand = Math.floor(Math.random() * (max - min)) + min
@@ -107,7 +108,7 @@ client.on("ready", () => {
                 giveaway()
             }, rand)
 
-        }(10000))
+        }('yes'))
     } else if (!drop.has(id)) {
         drop.set(`${id}.active`, true)
         drop.set(`${id}.elements`, el)
