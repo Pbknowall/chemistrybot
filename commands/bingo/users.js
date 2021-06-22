@@ -35,13 +35,13 @@ module.exports = {
                 backwards.on('collect', r => {
                     if (page === 1) return;
                     page--;
-                    msg.edit(pages[page - 1]).then(r.users.remove(message.author)).catch(error => console.log(error))
+                    msg.edit({ embed: pages[page - 1] }).then(r.users.remove(message.author)).catch(error => console.log(error))
                 })
 
                 forwards.on('collect', r => {
                     if (page === pages.length) return;
                     page++;
-                    msg.edit(pages[page - 1]).then(r.users.remove(message.author)).catch(error => console.log(error))
+                    msg.edit({ embed: pages[page - 1] }).then(r.users.remove(message.author)).catch(error => console.log(error))
                 })
             })
         })

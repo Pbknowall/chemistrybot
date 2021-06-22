@@ -18,7 +18,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setTitle("Info")
-            .setDescription("**ChemistryBot** is a chemistry-themed Discord bot made for [ChemistryHelp](ttps://discord.gg/hkxdFVMjrd)")
+            .setDescription("**ChemistryBot** is a chemistry-themed Discord bot made for [ChemistryHelp](ttps://discord.gg/hkxdFVMjrd)\n__ChemistryBot V2 is expected to release soon!__")
             .addFields([
                 { name: "Ping", value: client.ws.ping + "ms", inline: true },
                 { name: "Uptime", value: string, inline: true },

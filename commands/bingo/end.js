@@ -37,7 +37,7 @@ module.exports = {
                         .setDescription("Ended - Would you like me to pick a winner?")
                         .setColor("#ffbe42")
                         .setTimestamp()
-                    msg.edit(winnerOrNot).then(mesg => {
+                    msg.edit({ embed: winnerOrNot }).then(mesg => {
                         Client.collect(msg, message.author, "✅", "❌", 10000).then(r => {
                             if (!r) return;
                             if (r.emoji.name === "✅") {

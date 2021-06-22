@@ -99,7 +99,7 @@ module.exports = {
                         if (!r) return;
                         if (r.emoji.name === "✅") {
                             r.message.reactions.removeAll().catch(error => console.log(error))
-                            msg.edit(chosenEmbed)
+                            msg.edit({ embed: chosenEmbed })
                             const array = []
                             array.push({ name: list[index].name, symbol: list[index].symbol, id: list[index].id, guild: list[index].guild, user: message.author.id })
                             list.splice(index, 1, array[0])
