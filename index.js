@@ -47,16 +47,19 @@ client.on("ready", () => {
     const db = require('quick.db')
     const drop = new db.table('tvirus')
     const entries = new db.table('tvirususers')
-    /*const id = '742737352799289375'
-    const channel = '742849666256732170'*/
+    /*const id = '431417925744984085'
+    const channel = '431417925744984088'*/
 
     const id = '742737352799289375'
     const channel = '742849666256732170'
 
     const special = ['Titanium', 'Vanadium', 'Iodine', 'Rhodium', 'Uranium', 'Sulfur']
     if (drop.has(`${id}.active`)) {
-        (function giveaway() {
+        (function giveaway(first) {
             let max = 14400000, min = 21600000
+            if (first) {
+                max = 10000; min = 5;
+            }
             //let max = 30000, min = 25000
             let rand = Math.floor(Math.random() * (max - min)) + min
 
@@ -100,10 +103,11 @@ client.on("ready", () => {
                             msg.edit({ embed: errorEmbed })
                         })
                 })
+                if (!elements.length) return client.channels.cache.get('742849666256732170').send('<@283312969931292672> last element has been picked!')
                 giveaway()
             }, rand)
 
-        }())
+        }(10000))
     } else if (!drop.has(id)) {
         drop.set(`${id}.active`, true)
         drop.set(`${id}.elements`, el)

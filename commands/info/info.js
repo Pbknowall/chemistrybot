@@ -26,7 +26,8 @@ module.exports = {
                 { name: "Servers", value: client.guilds.cache.size, inline: true },
                 { name: "Users", value: users, inline: true },
                 { name: "Creator", value: "Pbknowall#0001", inline: true },
-                
+                { name: "Donate", value: 'https://www.paypal.me/pbknowall', inline: true }
+
             ])
             .setTimestamp()
             .setThumbnail(client.user.avatarURL())
