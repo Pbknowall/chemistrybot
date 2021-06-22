@@ -36,7 +36,7 @@ module.exports = {
             else return ''
         }
         ordered = ordered.slice(0, 15)
-        let toFetch = ordered;
+        /*let toFetch = ordered;
         let e = 0;
         (function fetch(i) {
             setTimeout(async function () {
@@ -44,7 +44,7 @@ module.exports = {
                 e++
                 if (toFetch[e]) fetch(e)
             })
-        })(e)
+        })(e)*/
         let userMap = ordered.map(obj =>
             `${podium(ordered.findIndex(e => e.ID === obj.ID) + 1)} **${ordinal(ordered.findIndex(e => e.ID === obj.ID) + 1)}** - ${message.guild.members.cache.get(obj.ID) ? message.guild.members.cache.get(obj.ID) : `<@${obj.ID}>`}`
         ).join('\n')
@@ -55,6 +55,5 @@ module.exports = {
             .setColor('#ffbe42')
             .setThumbnail(message.guild.iconURL())
         message.channel.send(leaderboard)
-
     }
 }

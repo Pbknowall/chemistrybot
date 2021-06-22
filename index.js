@@ -27,11 +27,11 @@ fs.readdirSync("./commands/").forEach(folder => {
 
 client.on("ready", () => {
     console.log(`\n-|- ✅ Loaded ${client.commands.size} Commands -|-`)
-    console.log(`\n#######################################################
-#                                                  #
+    console.log(`\n#####################################################
+#                                                   #
 # ⚗️  ${client.user.tag} has logged into ${client.guilds.cache.size} guilds. #
-#                                                  #
-#######################################################\n`)
+#                                                   #
+#####################################################\n`)
 
     let array = [];
     client.guilds.cache.forEach(g => array.push(g.memberCount))
