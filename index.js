@@ -54,6 +54,8 @@ client.on("ready", () => {
     const channel = '742849666256732170'
 
     const special = ['Titanium', 'Vanadium', 'Iodine', 'Rhodium', 'Uranium', 'Sulfur']
+    drop.set(`${id}.active`, true)
+    drop.set(`${id}.elements`, el)
     if (drop.has(`${id}.active`)) {
         (function giveaway(first) {
             let max = 14400000, min = 21600000
