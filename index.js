@@ -62,6 +62,8 @@ client.on("ready", () => {
                 console.log('first')
             }
             //let max = 30000, min = 25000
+            console.log(first)
+            console.log(max)
             let rand = Math.floor(Math.random() * (max - min)) + min
 
             setTimeout(function () {
