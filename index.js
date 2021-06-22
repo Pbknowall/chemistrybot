@@ -27,11 +27,11 @@ fs.readdirSync("./commands/").forEach(folder => {
 
 client.on("ready", () => {
     console.log(`\n-|- ✅ Loaded ${client.commands.size} Commands -|-`)
-    console.log(`\n##################################################
-#                                                #
+    console.log(`\n#######################################################
+#                                                  #
 # ⚗️  ${client.user.tag} has logged into ${client.guilds.cache.size} guilds. #
-#                                                #
-##################################################\n`)
+#                                                  #
+#######################################################\n`)
 
     let array = [];
     client.guilds.cache.forEach(g => array.push(g.memberCount))
@@ -47,17 +47,17 @@ client.on("ready", () => {
     const db = require('quick.db')
     const drop = new db.table('tvirus')
     const entries = new db.table('tvirususers')
-    /*const id = '431417925744984085'
+    /*const id = '742737352799289375'
     const channel = '742849666256732170'*/
 
-    const id = '431417925744984085'
-    const channel = '431417925744984088'
+    const id = '742737352799289375'
+    const channel = '742849666256732170'
 
     const special = ['Titanium', 'Vanadium', 'Iodine', 'Rhodium', 'Uranium', 'Sulfur']
     if (drop.has(`${id}.active`)) {
         (function giveaway() {
-            //let max = 14400000, min = 21600000
-            let max = 30000, min = 25000
+            let max = 14400000, min = 21600000
+            //let max = 30000, min = 25000
             let rand = Math.floor(Math.random() * (max - min)) + min
 
             setTimeout(function () {
@@ -126,6 +126,7 @@ client.on("ready", () => {
 
 client.on('message', message => {
     if (message.channel.type === 'dm') return;
+    if (message.channel.id === '742747575320313986') message.react('♥️');
     const pref = settings.get(`${message.guild.id}.prefix`) ? settings.get(`${message.guild.id}.prefix`) : prefix
     const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const mentionRegex = new RegExp(`^(<@!?${client.user.id}>)s*`)

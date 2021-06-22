@@ -10,7 +10,7 @@ module.exports = {
     usage: "!points",
     aliases: ['rank'],
     execute: async (client, message, args, Client) => {
-        if (message.guild.id !== '742737352799289375' || message.guild.id !== '431417925744984085') {
+        if (message.guild.id !== '742737352799289375' && message.guild.id !== '431417925744984085') {
             message.channel.send('This feature is currently in a beta phase and will be coming soon to all guilds.')
         }
         function ordinal(i) {
