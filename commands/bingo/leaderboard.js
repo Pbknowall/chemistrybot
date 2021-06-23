@@ -46,7 +46,7 @@ module.exports = {
             })
         })(e)*/
         let userMap = ordered.map(obj =>
-            `${podium(ordered.findIndex(e => e.ID === obj.ID) + 1)} **${ordinal(ordered.findIndex(e => e.ID === obj.ID) + 1)}** - ${message.guild.members.cache.get(obj.ID) ? message.guild.members.cache.get(obj.ID) : `<@${obj.ID}>`}`
+            `${podium(ordered.findIndex(e => e.ID === obj.ID) + 1)} **${ordinal(ordered.findIndex(e => e.ID === obj.ID) + 1)}** - ${message.guild.members.cache.get(obj.ID) ? message.guild.members.cache.get(obj.ID) : `<@${obj.ID}>`} - \`${obj.data.points.size}\` Points`
         ).join('\n')
 
         const leaderboard = new Discord.MessageEmbed()
