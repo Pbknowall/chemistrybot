@@ -196,7 +196,7 @@ module.exports = [
     atomic: 28
   },
   {
-    name: 'Copperl',
+    name: 'Copper',
     symbol: 'Cu',
     id: '747467467432919141',
     guild: '747466183913242724',
@@ -698,7 +698,8 @@ module.exports = [
     id: '747816396930547712',
     guild: '747813224858124298',
     atomic: 100
-  },{
+  },
+  {
     name: 'Mendelevium',
     symbol: 'Md',
     id: '747816513310031942',
