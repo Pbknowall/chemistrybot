@@ -57,14 +57,14 @@ client.on("ready", () => {
     drop.set(`${id}.active`, true)
     drop.set(`${id}.elements`, el)
     if (drop.has(`${id}.active`)) {
-        (function giveaway(first) {
+        (function giveaway() {
             let max = 14400000, min = 21600000
-            if (first) {
+            /*if (first) {
                 max = 10000; min = 5000;
                 console.log('first')
-            }
+            }*/
             //let max = 30000, min = 25000
-            console.log(first)
+            //console.log(first)
             console.log(max)
             let rand = Math.floor(Math.random() * (max - min)) + min
 
@@ -95,9 +95,7 @@ client.on("ready", () => {
                             entries.add(`${col.author.id}.points`, bool ? 20 : 5)
                             entries.push(`${col.author.id}.elements`, element)
 
-                            console.log(element)
-                            elements.splice(elementIndex, 1)
-                            drop.set(`${id}.elements`, elements)
+                            console.log(col.author.id, element)
                         })
                         .catch(col => {
                             let errorEmbed = new Discord.MessageEmbed()
@@ -107,12 +105,14 @@ client.on("ready", () => {
                                 .setFooter('Hint: Use !claim <Element Name> to claim an element once it appears!')
                             msg.edit({ embed: errorEmbed })
                         })
+                    elements.splice(elementIndex, 1)
+                    drop.set(`${id}.elements`, elements)
                 })
                 if (!elements.length) return client.channels.cache.get('742849666256732170').send('<@283312969931292672> last element has been picked!')
                 giveaway()
             }, rand)
 
-        }('yes'))
+        }())
     } else if (!drop.has(id)) {
         drop.set(`${id}.active`, true)
         drop.set(`${id}.elements`, el)
