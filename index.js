@@ -57,12 +57,12 @@ client.on("ready", () => {
     drop.set(`${id}.active`, true)
     drop.set(`${id}.elements`, el)
     if (drop.has(`${id}.active`)) {
-        (function giveaway() {
+        (function giveaway(first) {
             let max = 14400000, min = 21600000
-            /*if (first) {
-                max = 10000; min = 5000;
-                console.log('first')
-            }*/
+            if (first) {
+                max = 15000; min = 10000;
+                console.log('First coming up')
+            }
             //let max = 30000, min = 25000
             //console.log(first)
             console.log(max)
@@ -112,7 +112,7 @@ client.on("ready", () => {
                 giveaway()
             }, rand)
 
-        }())
+        }('yes'))
     } else if (!drop.has(id)) {
         drop.set(`${id}.active`, true)
         drop.set(`${id}.elements`, el)
