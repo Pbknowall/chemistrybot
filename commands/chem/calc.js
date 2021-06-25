@@ -46,12 +46,12 @@ module.exports = {
         let row5 = new MessageActionRow().addComponent(button21).addComponent(button22).addComponent(button23).addComponent(button24).addComponent(button25)
 
         let calc = ['>> ']
-        const msg = await message.channel.send(`\`\`\`autohotkey\n${calc.map(c => c)}\`\`\``, { components: [row, row2, row3, row4, row5] })
+        const msg = await message.channel.send(`\`\`\`autohotkey\n${calc.map(c => c)}\`\`\``, { components: [row, row2, row3, row4, row5] })    .catch(err => { console.log(err); return })
 
         const collector = msg.createButtonCollector(() => true, { time: 120000 });
 
         const edit = function (b, calc) {
-            b.message.edit(`\`\`\`autohotkey\n${calc.map(c => c).join('')}\`\`\``, { components: [row, row2, row3, row4, row5] })
+            b.message.edit(`\`\`\`autohotkey\n${calc.map(c => c).join('')}\`\`\``, { components: [row, row2, row3, row4, row5] }).catch(err => { console.log(err); return })
         }
 
         collector.on('collect', async (b) => {
@@ -100,7 +100,7 @@ module.exports = {
         collector.on('end', (col) => {
             let b = col.first()
             let m = b ? b.message : msg
-            m.edit('Calculator Expired - Please run the command again')
+            m.edit('Calculator Expired - Please run the command again').catch(err => { console.log(err); return })
         })
     }
 }

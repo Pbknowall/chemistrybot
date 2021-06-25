@@ -79,37 +79,39 @@ client.on("ready", () => {
                     .setColor(bool ? '#b300b3' : '#40E0D0')
                     .setThumbnail(client.guilds.cache.get(element.guild).emojis.cache.get(element.id).url)
                     .setFooter('ChemistryBot T-Virus Giveaway', client.user.avatarURL())
-                client.channels.cache.get(channel).send({ embed: embed }).then(msg => {
-                    const filter = m =>
-                        m.content.toLowerCase() === `!claim ${element.name}`.toLowerCase() ||
-                        m.content.toLowerCase() === `!claim ${element.symbol}`.toLowerCase()
-                    msg.channel.awaitMessages(filter, { max: 1, time: 3600000, errors: ['time'] })
-                        .then(async col => {
-                            col = col.first()
-                            const successEmbed = new Discord.MessageEmbed()
-                                .setAuthor(`A${bool ? 'RARE' : 'n'} Element Was Dropped`, client.guilds.cache.get(element.guild).emojis.cache.get(element.id).url)
-                                .setDescription(`The element **${element.name}** was dropped and claimed in ${Math.round(Math.abs(msg.createdAt - col.createdAt) / 10) / 100} seconds by ${col.author} for ${bool ? '**20 Points**' : '**5 Points**'}!`)
-                                .setColor('#ffbe42')
-                                .setThumbnail(col.author.displayAvatarURL({ size: 1024 }))
-                            await msg.edit({ embed: successEmbed })
-                            entries.add(`${col.author.id}.points`, bool ? 20 : 5)
-                            entries.push(`${col.author.id}.elements`, element)
+                try {
+                    client.channels.cache.get(channel).send({ embed: embed }).then(msg => {
+                        const filter = m =>
+                            m.content.toLowerCase() === `!claim ${element.name}`.toLowerCase() ||
+                            m.content.toLowerCase() === `!claim ${element.symbol}`.toLowerCase()
+                        msg.channel.awaitMessages(filter, { max: 1, time: 3600000, errors: ['time'] })
+                            .then(async col => {
+                                col = col.first()
+                                const successEmbed = new Discord.MessageEmbed()
+                                    .setAuthor(`A${bool ? 'RARE' : 'n'} Element Was Dropped`, client.guilds.cache.get(element.guild).emojis.cache.get(element.id).url)
+                                    .setDescription(`The element **${element.name}** was dropped and claimed in ${Math.round(Math.abs(msg.createdAt - col.createdAt) / 10) / 100} seconds by ${col.author} for ${bool ? '**20 Points**' : '**5 Points**'}!`)
+                                    .setColor('#ffbe42')
+                                    .setThumbnail(col.author.displayAvatarURL({ size: 1024 }))
+                                await msg.edit({ embed: successEmbed }).catch(err => { console.log(err); return })
+                                entries.add(`${col.author.id}.points`, bool ? 20 : 5)
+                                entries.push(`${col.author.id}.elements`, element)
 
-                            console.log(col.author.id, element)
-                        })
-                        .catch(col => {
-                            let errorEmbed = new Discord.MessageEmbed()
-                                .setAuthor('An Element Was Dropped', client.guilds.cache.get(element.guild).emojis.cache.get(element.id).url)
-                                .setDescription(`The element **${element.name}** was dropped but no one claimed it within 30 seconds! Good luck next time!`)
-                                .setColor('#ffbe42')
-                                .setFooter('Hint: Use !claim <Element Name> to claim an element once it appears!')
-                            msg.edit({ embed: errorEmbed })
-                        })
-                    elements.splice(elementIndex, 1)
-                    drop.set(`${id}.elements`, elements)
-                })
-                if (!elements.length) return client.channels.cache.get('742849666256732170').send('<@283312969931292672> last element has been picked!')
-                giveaway()
+                                console.log(col.author.id, element)
+                            })
+                            .catch(col => {
+                                let errorEmbed = new Discord.MessageEmbed()
+                                    .setAuthor('An Element Was Dropped', client.guilds.cache.get(element.guild).emojis.cache.get(element.id).url)
+                                    .setDescription(`The element **${element.name}** was dropped but no one claimed it within 30 seconds! Good luck next time!`)
+                                    .setColor('#ffbe42')
+                                    .setFooter('Hint: Use !claim <Element Name> to claim an element once it appears!')
+                                msg.edit({ embed: errorEmbed }).catch(err => { console.log(err); return })
+                            })
+                        elements.splice(elementIndex, 1)
+                        drop.set(`${id}.elements`, elements)
+                    }).catch(err => err.toString())
+                    if (!elements.length) return client.channels.cache.get('742849666256732170').send('<@283312969931292672> last element has been picked!')
+                    giveaway()
+                } catch (err) { console.log(err) }
             }, rand)
 
         }('yes'))
@@ -135,7 +137,7 @@ client.on("ready", () => {
 
 client.on('message', message => {
     if (message.channel.type === 'dm') return;
-    if (message.channel.id === '742747575320313986') message.react('♥️');
+    if (message.channel.id === '742747575320313986') message.react('♥️').catch(err => { console.log(err); return })
     const pref = settings.get(`${message.guild.id}.prefix`) ? settings.get(`${message.guild.id}.prefix`) : prefix
     const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const mentionRegex = new RegExp(`^(<@!?${client.user.id}>)s*`)

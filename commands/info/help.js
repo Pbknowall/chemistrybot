@@ -7,7 +7,7 @@ module.exports = {
     usage: "!help / !help <command>",
     aliases: ["cmds", "commands"],
     execute: async (client, message, args, Client) => {
-        message.react("✅").then(r => { setTimeout(() => { r.remove() }, 3000) })
+        message.react("✅").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
 
         if (!args[0]) {
             const mod = client.commands.filter(c => c.category === "Mod")
@@ -24,7 +24,7 @@ module.exports = {
                 .setTimestamp()
                 .setThumbnail(client.user.avatarURL())
                 .setColor("#ffbe42")
-            message.channel.send(embed)
+            message.channel.send(embed).catch(err => { console.log(err); return })
         } else if (args[0]) {
             const commandName = args.join(" ")
             const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
@@ -37,7 +37,7 @@ module.exports = {
 ❯ **Aliases**: ${command.aliases.map(a => `\`${a}\``).join(", ")}`)
                 .setTimestamp()
                 .setColor("#ffbe42")
-            message.channel.send(embed)
+            message.channel.send(embed).catch(err => { console.log(err); return })
         }
     },
 };

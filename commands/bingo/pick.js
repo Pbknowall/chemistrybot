@@ -39,19 +39,20 @@ module.exports = {
 
         if (!first.length && !second.length && !third.length) return Client.err(message, "All elements have been picked! The giveaway should end soon.")
         const embed = new MessageEmbed().setAuthor("Pick an Element", client.user.avatarURL()).setDescription(`**Here are the current available options:**`).setColor("#ffbe42")
-    const embed2 = new MessageEmbed().setFooter("Type \"cancel\" to cancel this prompt - It will be automatically cancelled in 45 seconds.").setColor("#ffbe42")
+        const embed2 = new MessageEmbed().setFooter("Type \"cancel\" to cancel this prompt - It will be automatically cancelled in 45 seconds.").setColor("#ffbe42")
 
-    message.channel.send(embed)
-    if (first.length) { message.channel.send("> " + first) }
-    if (second.length) { message.channel.send("> " + second) }
-    if (third.length) { message.channel.send("> " + third) }
-    message.channel.send(embed2)
-    
+        message.channel.send(embed)    .catch(err => { console.log(err); return })
+        if (first.length) { message.channel.send("> " + first)    .catch(err => { console.log(err); return }) }
+        if (second.length) { message.channel.send("> " + second)    .catch(err => { console.log(err); return }) }
+        if (third.length) { message.channel.send("> " + third)    .catch(err => { console.log(err); return }) }
+        message.channel.send(embed2)    .catch(err => { console.log(err); return })
+
         Client.prompt(message, "", 45000, "You took too long to reply! Please run the command again.", active)
             .then(m => {
                 if (m.toLowerCase() === "cancel") {
                     active.delete(message.channel.id)
                     return message.channel.send("Prompt Cancelled")
+                            .catch(err => { console.log(err); return })
                 }
                 if (m === "cancelled") return active.delete(message.channel.id)
                 let index;
@@ -99,7 +100,7 @@ module.exports = {
                         if (!r) return;
                         if (r.emoji.name === "✅") {
                             r.message.reactions.removeAll().catch(error => console.log(error))
-                            msg.edit({ embed: chosenEmbed })
+                            msg.edit({ embed: chosenEmbed }).catch(err => { console.log(err); return })
                             const array = []
                             array.push({ name: list[index].name, symbol: list[index].symbol, id: list[index].id, guild: list[index].guild, user: message.author.id })
                             list.splice(index, 1, array[0])
@@ -108,12 +109,12 @@ module.exports = {
                             active.delete(message.channel.id)
                         } else if (r.emoji.name === "❌") {
                             r.message.reactions.removeAll().catch(error => console.log(error))
-                            msg.edit({ embed: { author: { name: "⭕ Cancelled" }, color: "#FF0000" } })
+                            msg.edit({ embed: { author: { name: "⭕ Cancelled" }, color: "#FF0000" } }).catch(err => { console.log(err); return })
                             active.delete(message.channel.id)
                         }
                     })
                     setTimeout(() => active.delete(message.channel.id), 10000)
-                })
+                })    .catch(err => { console.log(err); return })
             })
     }
 }

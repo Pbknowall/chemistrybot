@@ -12,20 +12,20 @@ module.exports = {
     usage: "!start",
     aliases: [],
     execute: async (client, message, args) => {
-        if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(client.permMsg)
-        message.react("✅").then(r => { setTimeout(() => { r.remove() }, 3000) })
+        if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(client.permMsg)    .catch(err => { console.log(err); return })
+        message.react("✅").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
 
         const embed = new Discord.MessageEmbed()
             .setTitle("⭕ Start")
             .setDescription("**Are you sure you want to start a new collection?\nThis will wipe my current database of users from the previous collection. `(Y/N)`**")
             .setFooter("Type \"cancel\" to cancel this prompt - It will be automatically cancelled in 10 seconds.")
             .setColor("#ffbe42")
-        message.channel.send(embed)
+        message.channel.send(embed)    .catch(err => { console.log(err); return })
         const prompt = await message.channel.awaitMessages(res => res.author.id === message.author.id, { max: 1, time: 10000 })
             .then(async m => {
                 m = m.first()
                 if (m.author.id !== message.author.id) return;
-                if (m.content.toLowerCase() === "cancel") return message.channel.send("Prompt Cancelled")
+                if (m.content.toLowerCase() === "cancel") return message.channel.send("Prompt Cancelled")    .catch(err => { console.log(err); return })
                 if (yes.includes(m.content.toLowerCase())) {
                     if (el.has(`start_${message.guild.id}.list`)) el.delete(`start_${message.guild.id}.list`)
                     const wiping = await message.channel.send({
@@ -36,7 +36,7 @@ module.exports = {
                             },
                             color: "#00FF00"
                         }
-                    })
+                    })    .catch(err => { console.log(err); return })
                     emojis.map(e => el.push(`start_${message.guild.id}.list`, e))
                     await wiping.edit({
                         embed: {
@@ -45,7 +45,7 @@ module.exports = {
                             },
                             color: "#00FF00"
                         }
-                    })
+                    }).catch(err => { console.log(err); return })
                 } else if (no.includes(m.content.toLowerCase())) {
                     message.channel.send({
                         embed: {
@@ -54,14 +54,14 @@ module.exports = {
                             },
                             color: "#FF0000"
                         }
-                    })
+                    })    .catch(err => { console.log(err); return })
                 } else {
-                    return message.channel.send("Invalid Option - Cancelled")
+                    return message.channel.send("Invalid Option - Cancelled")    .catch(err => { console.log(err); return })
                 }
 
             }).catch(err => {
                 console.log(err)
-                message.channel.send("Prompt Cancelled")
+                message.channel.send("Prompt Cancelled")    .catch(err => { console.log(err); return })
             })
     },
 }

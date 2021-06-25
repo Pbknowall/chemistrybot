@@ -8,7 +8,7 @@ module.exports = {
     usage: "!quiz",
     aliases: ["trivia"],
     execute: async (client, message, args, Client) => {
-        if (!quizQuestions) return message.channel.send("An error occurred whilst fetching a quiz for you, please report this to Pbknowall#2666")
+        if (!quizQuestions) return message.channel.send("An error occurred whilst fetching a quiz for you, please report this to Pbknowall#0001").catch(err => { console.log(err); return })
         let which = Math.floor(Math.random() * 59)
         const quiz = quizQuestions[which]
         let aws = []
@@ -26,7 +26,7 @@ module.exports = {
             .setColor("#ffbe42")
             .setThumbnail(client.user.avatarURL())
             .setTimestamp()
-        message.channel.send(embed)
+        message.channel.send(embed).catch(err => { console.log(err); return })
         try {
             let index = aws.indexOf(quiz.correct)
             let letter = questions[index].charAt(2)
@@ -45,15 +45,15 @@ module.exports = {
                         .setFooter(`Nice one ${winner.username}!`, client.user.avatarURL())
                         .setTimestamp()
                     if (quiz.fact) correctEmbed.addField("Fun Fact", quiz.fact)
-                    return message.channel.send(correctEmbed)
-                } else m.react("❌")
+                    return message.channel.send(correctEmbed).catch(err => { console.log(err); return })
+                } else m.react("❌").catch(err => { console.log(err); return })
             })
             collector.on("end", () => {
-                if (!winner) return message.channel.send(Client.err("❌ Time's Up!").setDescription(`Looks like you didn't get the answer in time! The correct answer was **${letter}** - **${quiz.correct}**`))
+                if (!winner) return message.channel.send(Client.err("❌ Time's Up!").setDescription(`Looks like you didn't get the answer in time! The correct answer was **${letter}** - **${quiz.correct}**`)).catch(err => { console.log(err); return })
             })
         } catch (err) {
             console.log(err)
-            return message.channel.send(Client.err("❌ Time's Up!").setDescription(`Looks like you didn't get the answer in time! The correct answer was **${letter}** - **${quiz.correct}**`))
+            return message.channel.send(Client.err("❌ Time's Up!").setDescription(`Looks like you didn't get the answer in time! The correct answer was **${letter}** - **${quiz.correct}**`)).catch(err => { console.log(err); return })
         }
     }
 }

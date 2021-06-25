@@ -12,13 +12,13 @@ module.exports = {
         const commandName = args[0].toLowerCase();
         const command = message.client.commands.get(commandName) || message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-        if (!command) return message.react("❌").then(r => { setTimeout(() => { r.remove() }, 3000) })
+        if (!command) return message.react("❌").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
         delete require.cache[require.resolve(`./../${command.category.toLowerCase()}/${command.name}.js`)]
 
         try {
             const newCommand = require(`./../${command.category.toLowerCase()}/${command.name}.js`);
             message.client.commands.set(newCommand.name, newCommand);
-            message.react("✅").then(r => { setTimeout(() => { r.remove() }, 3000) })
+            message.react("✅").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
             message.channel.send(`✅ \`!${command.name}\` Reloaded!`)
         } catch (error) {
             console.log(error);

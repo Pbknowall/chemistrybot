@@ -11,7 +11,7 @@ module.exports = {
         if (!trusted.includes(message.author.id)) return;
         const command = args.slice(0).join(" ")
         if (!command) return;
-        message.react("✅").then(r => { setTimeout(() => { r.remove() }, 3000) })
+        message.react("✅").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
         try {
             const evaled = eval(command)
             let embed = new Discord.MessageEmbed()

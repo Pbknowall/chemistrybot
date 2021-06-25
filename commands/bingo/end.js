@@ -9,7 +9,7 @@ module.exports = {
     usage: "!end",
     aliases: [],
     execute: async (client, message, args, Client) => {
-        if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(client.permMsg)
+        if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(client.permMsg)    .catch(err => { console.log(err); return })
         const list = el.get(`start_${message.guild.id}.list`)
         if (!list) return Client.err(message, "There Is No Ongoing Collection")
         let array = [];
@@ -41,8 +41,8 @@ module.exports = {
                         Client.collect(msg, message.author, "✅", "❌", 10000).then(r => {
                             if (!r) return;
                             if (r.emoji.name === "✅") {
-                                mesg.delete()
-                                message.delete()
+                                mesg.delete().catch(err => { console.log(err); return })
+                                message.delete().catch(err => { console.log(err); return })
                                 console.log(winnerEl)
                                 console.log(winnerID)
                                 let ended = new Discord.MessageEmbed().setAuthor("Ended", "https://images.emojiterra.com/twitter/512px/1f389.png")
@@ -50,15 +50,15 @@ module.exports = {
                                 message.channel.send(ended)
                             } else if (r.emoji.name === "❌") {
                                 r.message.reactions.removeAll().catch(error => console.log(error))
-                                mesg.edit({ embed: { author: { name: "⭕ Ended - No Winner Picked" }, color: "#FF0000" } })
+                                mesg.edit({ embed: { author: { name: "⭕ Ended - No Winner Picked" }, color: "#FF0000" } }).catch(err => { console.log(err); return })
                             }
                         })
-                    })
+                    }).catch(err => { console.log(err); return })
                 } else if (r.emoji.name === "❌") {
                     r.message.reactions.removeAll().catch(error => console.log(error))
-                    msg.edit({ embed: { author: { name: "⭕ Cancelled" }, color: "#FF0000" } })
+                    msg.edit({ embed: { author: { name: "⭕ Cancelled" }, color: "#FF0000" } }).catch(err => { console.log(err); return })
                 }
             })
-        })
+        })    .catch(err => { console.log(err); return })
     }
 }

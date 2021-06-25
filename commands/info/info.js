@@ -33,6 +33,6 @@ module.exports = {
             .setThumbnail(client.user.avatarURL())
             .setFooter("Mango Development")
             .setColor("#ffbe42");
-        message.channel.send(embed)
+        message.channel.send(embed).catch(err => { console.log(err); return })
     }
 };

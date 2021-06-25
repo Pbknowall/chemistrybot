@@ -11,7 +11,10 @@ module.exports = {
     aliases: ['rank'],
     execute: async (client, message, args, Client) => {
         if (message.guild.id !== '742737352799289375' && message.guild.id !== '431417925744984085') {
-            message.channel.send('This feature is currently in a beta phase and will be coming soon to all guilds.')
+            try {
+                message.channel.send('This feature is currently in a beta phase and will be coming soon to all guilds.')
+                    .catch(err => { return })
+            } catch (err) { console.log(err) }
         }
         function ordinal(i) {
             var j = i % 10,
@@ -33,11 +36,16 @@ module.exports = {
             .setDescription('You don\'t have any points yet! Pay attention to the main chat and get ready to claim some elements as your own!')
             .setColor('#ffbe42')
             .setThumbnail(message.author.displayAvatarURL({ size: 256, dynamic: true }))
-        if (!entries.has(message.author.id) || !entries.get(`${message.author.id}.points`)) return message.channel.send({ embed: hasNoPoints })
+        if (!entries.has(message.author.id) || !entries.get(`${message.author.id}.points`)) {
+            try {
+                message.channel.send({ embed: hasNoPoints })
+                    .catch(err => { return })
+            } catch (err) { console.log(err) }
+            return
+        }
         let user = entries.get(message.author.id)
         let allUsers = entries.all()
         let ordered = allUsers.sort((a, b) => (a.data.points < b.data.points) ? 1 : ((b.data.points < a.data.points) ? -1 : 0))
-        console.log(ordered)
         function podium(i) {
             if (!(i - 1)) return '🏆'
             else if (!(i - 2)) return '🥈'
@@ -45,18 +53,21 @@ module.exports = {
             else return '🧪'
         }
         let place = ordered.findIndex(e => e.ID === message.author.id) + 1
-        console.log(place)
+        let specials = user.elements.filter(e => special.includes(e.name))
+        let common = user.elements.filter(e => !special.includes(e.name))
+
         let pointsEmbed = new Discord.MessageEmbed()
             .setAuthor(`${message.author.username}'s Points`, client.user.avatarURL())
             .setDescription(`You currently have **${user.points}** Points
             
-            - \`${user.elements.filter(e => !special.includes(e.name)).length}\` **Common Elements**
-            - \`${user.elements.filter(e => special.includes(e.name)).length}\` **__Special__ Elements**
+            - \`${common.length}\` **Common Elements**: ${common.map(e => `\`${e.name}`).join(', ')}
+            - \`${specials.length}\` **__Special__ Elements**: ${specials.map(e => `\`${e.name}`).join(', ')}
             - ${podium(place)} You are in **${ordinal(place)}** Place.`)
             .setColor('#ffbe42')
             .setThumbnail(message.author.displayAvatarURL({ size: 256, dynamic: true }))
-        message.channel.send(pointsEmbed)
-        if (-1) return 1; else return 0
-
+        try {
+            message.channel.send(pointsEmbed)
+                .catch(err => { return })
+        } catch (err) { console.log(err) }
     }
 }

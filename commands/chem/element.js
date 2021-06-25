@@ -8,7 +8,7 @@ module.exports = {
     usage: "!element <name / symbol / atomic number>",
     aliases: ["el"],
     execute: async (client, message, args, Client) => {
-        message.react("✅").then(r => { setTimeout(() => { r.remove() }, 3000) })
+        message.react("✅").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
 
         const element = args[0]
         if (!element) return Client.err(message, "Please Specify an Element")
@@ -60,6 +60,6 @@ module.exports = {
                     iconURL: client.user.avatarURL()
                 }
             }
-        })
+        }).catch(err => { console.log(err); return })
     }
 }

@@ -13,5 +13,6 @@ module.exports = {
             .setColor("#ffbe42")
             .setTimestamp()
         message.channel.send(embed)
+            .catch(err => { console.log(err); return })
     }
 }

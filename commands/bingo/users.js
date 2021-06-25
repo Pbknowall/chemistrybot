@@ -8,7 +8,7 @@ module.exports = {
     usage: "!users",
     aliases: [],
     execute: async (client, message, args, Client) => {
-        message.react("✅").then(r => { setTimeout(() => { r.remove() }, 3000) })
+        message.react("✅").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
         const e = el.get(`start_${message.guild.id}.list`)
         let list = []
         e.map(l => { if (l.user) list.push(l) })
@@ -26,7 +26,7 @@ module.exports = {
 
         message.channel.send(page1).then(msg => {
             msg.react('⏪').then(r => {
-                msg.react('⏩')
+                msg.react('⏩').catch(err => { console.log(err); return })
                 const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id;
                 const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id;
                 const backwards = msg.createReactionCollector(backwardsFilter, { time: 60000 });
@@ -41,9 +41,9 @@ module.exports = {
                 forwards.on('collect', r => {
                     if (page === pages.length) return;
                     page++;
-                    msg.edit({ embed: pages[page - 1] }).then(r.users.remove(message.author)).catch(error => console.log(error))
+                    msg.edit({ embed: pages[page - 1] }).then(r.users.remove(message.author)).catch(error => console.log(error)).catch(err => { console.log(err); return })
                 })
-            })
-        })
+            }).catch(err => { console.log(err); return })
+        }).catch(err => { console.log(err); return })
     }
 }

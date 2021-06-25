@@ -21,11 +21,11 @@ class Functions {
     }
     err(message, msg) {
         const embed = new MessageEmbed().setDescription(`⭕ ${msg ? msg : "An Error Occurred"}`).setColor("#FF0000")
-        return message.channel ? message.channel.send(embed) : embed
+        return message.channel ? message.channel.send(embed).catch(err => { console.log(err); return }) : embed
     }
     collect(message, author, e1, e2, time, msg, active) {
-        message.react(e1)
-        message.react(e2)
+        message.react(e1).catch(err => { console.log(err); return })
+        message.react(e2).catch(err => { console.log(err); return })
         const f1 = (r, u) => r.emoji.name === e1 && u.id === author.id
         const f2 = (r, u) => r.emoji.name === e2 && u.id === author.id
         const c1 = message.createReactionCollector(f1, { time: time })
