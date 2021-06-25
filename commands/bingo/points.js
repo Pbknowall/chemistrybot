@@ -60,7 +60,7 @@ module.exports = {
             .setAuthor(`${message.author.username}'s Points`, client.user.avatarURL())
             .setDescription(`You currently have **${user.points}** Points
             
-            - \`${common.length}\` **Common Elements**: ${common.map(e => `\`${e.name}`).join(', ')}
+            - \`${common.length}\` **Common Elements**: ${common.map(e => `\`${e.name}\``).join(', ')}
             - \`${specials.length}\` **__Special__ Elements**: ${specials.map(e => `\`${e.name}`).join(', ')}
             - ${podium(place)} You are in **${ordinal(place)}** Place.`)
             .setColor('#ffbe42')
