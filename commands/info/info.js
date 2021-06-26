@@ -18,15 +18,15 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setTitle("Info")
-            .setDescription("**ChemistryBot** is a chemistry-themed Discord bot made for [ChemistryHelp](ttps://discord.gg/hkxdFVMjrd)\n__ChemistryBot V2 is expected to release soon!__")
+            .setDescription("**ChemistryBot** is a chemistry-themed Discord bot made for [ChemistryHelp](https://discord.gg/hkxdFVMjrd)\n__ChemistryBot V2 is expected to release soon!__")
             .addFields([
                 { name: "Ping", value: client.ws.ping + "ms", inline: true },
                 { name: "Uptime", value: string, inline: true },
-                { name: "Invite", value: "[Click](https://discord.com/oauth2/authorize?client_id=747467735864180836&permissions=2146958847&scope=bot)", inline: true },
+                { name: "Invite", value: "[Invite](https://discord.com/oauth2/authorize?client_id=747467735864180836&permissions=2146958847&scope=bot)", inline: true },
                 { name: "Servers", value: client.guilds.cache.size, inline: true },
                 { name: "Users", value: users, inline: true },
                 { name: "Creator", value: "Pbknowall#0001", inline: true },
-                { name: "Donate", value: 'https://www.paypal.me/pbknowall', inline: true }
+                { name: "Support Development", value: '[Paypal.me](https://www.paypal.me/pbknowall)', inline: true }
 
             ])
             .setTimestamp()

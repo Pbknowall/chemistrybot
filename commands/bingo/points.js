@@ -30,20 +30,23 @@ module.exports = {
             }
             return i + "th";
         }
+        let user = message.mentions.users.first()
+            || message.guild.members.cache.get(args[0]).user
+            || message.guild.members.find(m => m.user.username.toLowerCase().startsWith(args.join(' ').toLowerCase())).user
+            || message.guild.members.find(m => m.user.username.toLowerCase().includes(args.join(' ').toLowerCase())).user
+            || message.author
 
         let hasNoPoints = new Discord.MessageEmbed()
-            .setAuthor(`${message.author.username}'s Points`, client.user.avatarURL())
-            .setDescription('You don\'t have any points yet! Pay attention to the main chat and get ready to claim some elements as your own!')
+            .setAuthor(`${user.username}'s Points`, client.user.avatarURL())
+            .setDescription(`${message.author.id === user.id ? 'You don\'t' : `${user} doesn't`} have any points yet! Pay attention to the main chat and get ready to claim some elements as your own!`)
             .setColor('#ffbe42')
-            .setThumbnail(message.author.displayAvatarURL({ size: 256, dynamic: true }))
-        if (!entries.has(message.author.id) || !entries.get(`${message.author.id}.points`)) {
-            try {
-                message.channel.send({ embed: hasNoPoints })
-                    .catch(err => { return })
-            } catch (err) { console.log(err) }
+            .setThumbnail(user.displayAvatarURL({ size: 256, dynamic: true }))
+        if (!entries.has(user.id) || !entries.get(`${user.id}.points`)) {
+            message.channel.send({ embed: hasNoPoints })
+                .catch(err => { return })
             return
         }
-        let user = entries.get(message.author.id)
+        user = entries.get(user.id)
         let allUsers = entries.all()
         let ordered = allUsers.sort((a, b) => (a.data.points < b.data.points) ? 1 : ((b.data.points < a.data.points) ? -1 : 0))
         function podium(i) {
@@ -52,22 +55,20 @@ module.exports = {
             else if (!(i - 3)) return '🥉'
             else return '🧪'
         }
-        let place = ordered.findIndex(e => e.ID === message.author.id) + 1
+        let place = ordered.findIndex(e => e.ID === user.id) + 1
         let specials = user.elements.filter(e => special.includes(e.name))
         let common = user.elements.filter(e => !special.includes(e.name))
 
         let pointsEmbed = new Discord.MessageEmbed()
-            .setAuthor(`${message.author.username}'s Points`, client.user.avatarURL())
+            .setAuthor(`${user.username}'s Points`, client.user.avatarURL())
             .setDescription(`You currently have **${user.points}** Points
             
             - \`${common.length}\` **Common Elements**: ${common.map(e => `\`${e.name}\``).join(', ')}
             - \`${specials.length}\` **__Special__ Elements**: ${specials.map(e => `\`${e.name}`).join(', ')}
-            - ${podium(place)} You are in **${ordinal(place)}** Place.`)
+            - ${podium(place)} ${message.author.id === user.id ? 'You are' : `${user} is`} in **${ordinal(place)}** Place.`)
             .setColor('#ffbe42')
             .setThumbnail(message.author.displayAvatarURL({ size: 256, dynamic: true }))
-        try {
-            message.channel.send(pointsEmbed)
-                .catch(err => { return })
-        } catch (err) { console.log(err) }
+        message.channel.send(pointsEmbed)
+            .catch(err => { return })
     }
 }
