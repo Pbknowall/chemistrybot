@@ -31,10 +31,12 @@ module.exports = {
             return i + "th";
         }
         let user = message.mentions.users.first()
-            || message.guild.members.cache.get(args[0]).user
-            || message.guild.members.find(m => m.user.username.toLowerCase().startsWith(args.join(' ').toLowerCase())).user
-            || message.guild.members.find(m => m.user.username.toLowerCase().includes(args.join(' ').toLowerCase())).user
-            || message.author
+            || message.guild.members.cache.get(args[0])
+            || message.guild.members.find(m => m.user.username.toLowerCase().startsWith(args.join(' ').toLowerCase()))
+            || message.guild.members.find(m => m.user.username.toLowerCase().includes(args.join(' ').toLowerCase()))
+
+            if (!user) user = message.author
+            else user = user.user
 
         let hasNoPoints = new Discord.MessageEmbed()
             .setAuthor(`${user.username}'s Points`, client.user.avatarURL())
