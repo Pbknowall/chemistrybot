@@ -57,9 +57,7 @@ module.exports = {
                 .catch(err => { return })
             return
         }
-        console.log(user)
         let dbUser = entries.get(user.id)
-        console.log(user)
         let allUsers = entries.all()
         let ordered = allUsers.sort((a, b) => (a.data.points < b.data.points) ? 1 : ((b.data.points < a.data.points) ? -1 : 0))
         function podium(i) {
@@ -77,7 +75,7 @@ module.exports = {
             .setDescription(`${message.author.id === user.id ? 'You currently have' : `${user} currently has`} **${dbUser.points}** Points
             
             - \`${common.length}\` **Common Elements**: ${common.map(e => `\`${e.name}\``).join(', ')}
-            - \`${specials.length}\` **__Special__ Elements**: ${specials.map(e => `\`${e.name}`).join(', ')}
+            - \`${specials.length}\` **__Special__ Elements**: ${specials.map(e => `\`${e.name}\``).join(', ')}
             - ${podium(place)} ${message.author.id === user.id ? 'You are' : `${user} is`} in **${ordinal(place)}** Place.`)
             .setColor('#ffbe42')
             .setThumbnail(user.displayAvatarURL({ size: 256, dynamic: true }))
