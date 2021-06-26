@@ -57,7 +57,9 @@ module.exports = {
                 .catch(err => { return })
             return
         }
-        user = entries.get(user.id)
+        console.log(user)
+        let dbUser = entries.get(user.id)
+        console.log(user)
         let allUsers = entries.all()
         let ordered = allUsers.sort((a, b) => (a.data.points < b.data.points) ? 1 : ((b.data.points < a.data.points) ? -1 : 0))
         function podium(i) {
@@ -67,19 +69,19 @@ module.exports = {
             else return '🧪'
         }
         let place = ordered.findIndex(e => e.ID === user.id) + 1
-        let specials = user.elements.filter(e => special.includes(e.name))
-        let common = user.elements.filter(e => !special.includes(e.name))
+        let specials = dbUser.elements.filter(e => special.includes(e.name))
+        let common = dbUser.elements.filter(e => !special.includes(e.name))
 
         let pointsEmbed = new Discord.MessageEmbed()
             .setAuthor(`${user.username}'s Points`, client.user.avatarURL())
-            .setDescription(`You currently have **${user.points}** Points
+            .setDescription(`${message.author.id === user.id ? 'You currently have' : `${user} currently has`} **${dbUser.points}** Points
             
             - \`${common.length}\` **Common Elements**: ${common.map(e => `\`${e.name}\``).join(', ')}
             - \`${specials.length}\` **__Special__ Elements**: ${specials.map(e => `\`${e.name}`).join(', ')}
             - ${podium(place)} ${message.author.id === user.id ? 'You are' : `${user} is`} in **${ordinal(place)}** Place.`)
             .setColor('#ffbe42')
-            .setThumbnail(message.author.displayAvatarURL({ size: 256, dynamic: true }))
-        message.channel.send(pointsEmbed)
+            .setThumbnail(user.displayAvatarURL({ size: 256, dynamic: true }))
+        message.channel.send({ embed: pointsEmbed })
             .catch(err => { return })
     }
 }
