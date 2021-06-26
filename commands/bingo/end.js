@@ -18,6 +18,9 @@ module.exports = {
 
         while (w === false) {
             index = Math.floor(Math.random() * array.length)
+            console.log(message.guild.id)
+            console.log(index)
+            console.log(array[index])
             winnerID = array[index].user
             winnerEl = array[index].name
             winner = message.guild.members.cache.get(winnerID)
