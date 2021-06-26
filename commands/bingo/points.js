@@ -30,15 +30,23 @@ module.exports = {
             }
             return i + "th";
         }
-        let user = message.mentions.users.first()
-            || message.guild.members.cache.get(args[0])
-            || message.guild.members.cache.find(m => m.user.username.toLowerCase().startsWith(args.join(' ').toLowerCase()))
-            || message.guild.members.cache.find(m => m.user.username.toLowerCase().includes(args.join(' ').toLowerCase()))
+        let user;
+        if (args.length) {
+            try {
+                await message.guild.members.fetch(args[0]).catch(err => { return })
+                let member = message.mentions.members.first()
+                    || message.guild.members.cache.get(args[0])
+                    || message.guild.members.cache.find(m => m.user.username.toLowerCase().startsWith(args.join(' ').toLowerCase()))
+                    || message.guild.members.cache.find(m => m.user.username.toLowerCase().includes(args.join(' ').toLowerCase()))
 
-        if (!user) {
+                if (member.user && !member.user.bot) user = member.user
+                else user = message.author
+            } catch {
+                user = message.author
+            }
+        } else {
             user = message.author
-        } else { user = user.user }
-
+        }
         let hasNoPoints = new Discord.MessageEmbed()
             .setAuthor(`${user.username}'s Points`, client.user.avatarURL())
             .setDescription(`${message.author.id === user.id ? 'You don\'t' : `${user} doesn't`} have any points yet! Pay attention to the main chat and get ready to claim some elements as your own!`)
