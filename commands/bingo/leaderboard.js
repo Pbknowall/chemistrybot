@@ -54,7 +54,7 @@ module.exports = {
             .setTitle('Guild Leaderboard - Drop Giveaway')
             .setDescription(userMap)
             .setColor('#ffbe42')
-            .setThumbnail('https://i.imgur.com/EcAouZ9.jpg')
+            .setThumbnail('https://i.imgur.com/iRJ8MgG.png')
         message.channel.send(leaderboard)
                 .catch(err => { console.log(err); return })
     }
