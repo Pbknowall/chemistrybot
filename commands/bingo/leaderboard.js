@@ -49,12 +49,19 @@ module.exports = {
         let userMap = ordered.map(obj =>
             `${podium(ordered.findIndex(e => e.ID === obj.ID) + 1)} **${ordinal(ordered.findIndex(e => e.ID === obj.ID) + 1)}** - ${message.guild.members.cache.get(obj.ID) ? message.guild.members.cache.get(obj.ID) : `<@${obj.ID}>`} - \`${obj.data.points}\` Points`
         ).join('\n')
+        let allElements = []
+        allUsers.forEach(u => {
+            u.data.elements.forEach(e => {
+                allElements.push(e)
+            })
+        })
 
         const leaderboard = new Discord.MessageEmbed()
             .setTitle('Guild Leaderboard - Drop Giveaway')
             .setDescription(userMap)
             .setColor('#ffbe42')
             .setThumbnail('https://i.imgur.com/iRJ8MgG.png')
+            .setFooter(`\n${allElements.length}/118 Elements`)
         message.channel.send(leaderboard)
                 .catch(err => { console.log(err); return })
     }

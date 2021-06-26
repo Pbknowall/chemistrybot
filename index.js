@@ -114,7 +114,7 @@ client.on("ready", () => {
                 } catch (err) { console.log(err) }
             }, rand)
 
-        }('yes'))
+        }())
     } else if (!drop.has(id)) {
         drop.set(`${id}.active`, true)
         drop.set(`${id}.elements`, el)

@@ -15,12 +15,10 @@ module.exports = {
         let array = [];
         list.map(l => { if (l.user) array.push(l) })
         let w = false; let index; let winnerID; let winnerEl; let winner;
+        if (!array.length) return Client.err(message, 'Nobody has picked an element yet!')
 
         while (w === false) {
             index = Math.floor(Math.random() * array.length)
-            console.log(message.guild.id)
-            console.log(index)
-            console.log(array[index])
             winnerID = array[index].user
             winnerEl = array[index].name
             winner = message.guild.members.cache.get(winnerID)
