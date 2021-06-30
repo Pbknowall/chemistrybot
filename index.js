@@ -77,7 +77,7 @@ client.on("ready", () => {
                     .setTitle(bool ? '⚠️ A RARE ELEMENT Has Been Dropped!!! ⚠️' : '⚠️ An Element Has Been Dropped! ⚠️')
                     .setDescription(`The element **${element.name}** has been dropped! Use \`!claim <Element Name/Symbol>\` to add this to your collection, gain ${bool ? '**20 POINTS**' : '**5 Points**'} and closen yourself to victory!`)
                     .setColor(bool ? '#b300b3' : '#40E0D0')
-                    .setThumbnail(client.guilds.cache.get(element.guild).emojis.cache.get(element.id).url)
+                    //.setThumbnail(client.guilds.cache.get(element.guild).emojis.cache.get(element.id).url)
                     .setFooter('ChemistryBot T-Virus Giveaway', client.user.avatarURL())
                 try {
                     client.channels.cache.get(channel).send({ embed: embed }).then(msg => {
@@ -88,10 +88,10 @@ client.on("ready", () => {
                             .then(async col => {
                                 col = col.first()
                                 const successEmbed = new Discord.MessageEmbed()
-                                    .setAuthor(`A${bool ? 'RARE' : 'n'} Element Was Dropped`, client.guilds.cache.get(element.guild).emojis.cache.get(element.id).url)
+                                    .setAuthor(`A${bool ? 'RARE' : 'n'} Element Was Dropped`/*, client.guilds.cache.get(element.guild).emojis.cache.get(element.id).url*/)
                                     .setDescription(`The element **${element.name}** was dropped and claimed in ${Math.round(Math.abs(msg.createdAt - col.createdAt) / 10) / 100} seconds by ${col.author} for ${bool ? '**20 Points**' : '**5 Points**'}!`)
                                     .setColor('#ffbe42')
-                                    .setThumbnail(col.author.displayAvatarURL({ size: 1024 }))
+                                    //.setThumbnail(col.author.displayAvatarURL({ size: 1024 }))
                                 await msg.edit({ embed: successEmbed }).catch(err => { console.log(err); return })
                                 entries.add(`${col.author.id}.points`, bool ? 20 : 5)
                                 entries.push(`${col.author.id}.elements`, element)
