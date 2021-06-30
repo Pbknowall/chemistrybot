@@ -46,7 +46,7 @@ module.exports = {
         let row5 = new MessageActionRow().addComponent(button21).addComponent(button22).addComponent(button23).addComponent(button24).addComponent(button25)
 
         let calc = ['>> ']
-        const msg = await message.channel.send(`\`\`\`autohotkey\n${calc.map(c => c)}\`\`\``, { components: [row, row2, row3, row4, row5] })    .catch(err => { console.log(err); return })
+        const msg = await message.channel.send(`\`\`\`autohotkey\n${calc.map(c => c)}\`\`\``, { components: [row, row2, row3, row4, row5] }).catch(err => { console.log(err); return })
 
         const collector = msg.createButtonCollector(() => true, { time: 120000 });
 
