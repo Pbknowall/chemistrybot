@@ -10,7 +10,7 @@ module.exports = {
     usage: "!points",
     aliases: ['ranks'],
     execute: async (client, message, args, Client) => {
-        if (message.guild.id !== '742737352799289375' && message.guild.id !== '431417925744984085') {
+        /*if (message.guild.id !== '742737352799289375' && message.guild.id !== '431417925744984085') {
             message.channel.send('This feature is currently in a beta phase and will be coming soon to all guilds.')
                     .catch(err => { console.log(err); return })
         }
@@ -46,6 +46,7 @@ module.exports = {
                 if (toFetch[e]) fetch(e)
             })
         })(e)*/
+        /*
         let userMap = ordered.map(obj =>
             `${podium(ordered.findIndex(e => e.ID === obj.ID) + 1)} **${ordinal(ordered.findIndex(e => e.ID === obj.ID) + 1)}** - ${message.guild.members.cache.get(obj.ID) ? message.guild.members.cache.get(obj.ID) : `<@${obj.ID}>`} - \`${obj.data.points}\` Points`
         ).join('\n')
@@ -63,6 +64,6 @@ module.exports = {
             .setThumbnail('https://i.imgur.com/iRJ8MgG.png')
             .setFooter(`\n${allElements.length}/118 Elements`)
         message.channel.send(leaderboard)
-                .catch(err => { console.log(err); return })
+                .catch(err => { console.log(err); return })*/
     }
 }

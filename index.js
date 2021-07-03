@@ -43,12 +43,12 @@ client.on("ready", () => {
     }, 20000)
 
 
-    const el = require('./src/T-Virus Defaults')
+    /*const el = require('./src/T-Virus Defaults')
     const db = require('quick.db')
     const drop = new db.table('tvirus')
     const entries = new db.table('tvirususers')
-    /*const id = '431417925744984085'
-    const channel = '431417925744984088'*/
+    const id = '431417925744984085'
+    const channel = '431417925744984088'
 
     const id = '742737352799289375'
     const channel = '742849666256732170'
@@ -110,15 +110,15 @@ client.on("ready", () => {
                         drop.set(`${id}.elements`, elements)
                     }).catch(err => err.toString())
                     if (!elements.length) return client.channels.cache.get('742849666256732170').send('<@283312969931292672> last element has been picked!')
-                    giveaway()
+                    giveaway('yes')
                 } catch (err) { console.log(err) }
             }, rand)
 
-        }('yes'))
+        })
     } else if (!drop.has(id)) {
         drop.set(`${id}.active`, true)
         drop.set(`${id}.elements`, el)
-    }
+    }*/
 
 
 
