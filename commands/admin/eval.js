@@ -13,7 +13,7 @@ module.exports = {
         if (!command) return;
         message.react("✅").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
         try {
-            const evaled = eval(command)
+            const evaled = eval(command).catch(err => { return })
             let embed = new Discord.MessageEmbed()
                 .setColor("#ffbe42")
                 .setAuthor("Evaluation", message.author.avatarURL())

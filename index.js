@@ -2,11 +2,15 @@ const Discord = require("discord.js")
 const fs = require('fs');
 const DBL = require("dblapi.js")
 const client = new Discord.Client({ disableEveryone: true/*, ws: { intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] } */ })
-const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0NzQ2NzczNTg2NDE4MDgzNiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA5MTY5NjI1fQ.5gL83XWWXlrSGphJSXffhj3sQgzfaCz6iVF3_ql-RjY', client)
+try {
+    const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc0NzQ2NzczNTg2NDE4MDgzNiIsImJvdCI6dHJ1ZSwiaWF0IjoxNjA5MTY5NjI1fQ.5gL83XWWXlrSGphJSXffhj3sQgzfaCz6iVF3_ql-RjY', client)
+} catch (err) {
+    console.log(err)
+}
 const { prefix, token } = require("./config.json")
 const Client = new (require("./src/functions.js"))
 const settings = new (require("quick.db")).table("settings")
-const disbut = require('discord-buttons')(client)
+require('discord-buttons')(client)
 client.permMsg = new Discord.MessageEmbed().setDescription("❌ You don't have permission to use this command").setColor("#FF0000")
 client.commands = new Discord.Collection()
 //"token": "NzQ3NDY3NzM1ODY0MTgwODM2.X0PTkw.SpcHhdNE_YGrSnXX1_xutFJjCtw",
