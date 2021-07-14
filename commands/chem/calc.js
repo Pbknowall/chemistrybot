@@ -38,13 +38,13 @@ module.exports = {
         let button23 = new MessageButton().setLabel('=').setStyle('green').setID('equals')
         let button24 = new MessageButton().setLabel('+').setStyle('grey').setID('+')
         let button25 = new MessageButton().setLabel(' ').setStyle('grey').setID('spacer')
-
+console.log('After buttons')
         let row = new MessageActionRow().addComponent(button).addComponent(button2).addComponent(button3).addComponent(button4).addComponent(button5)
         let row2 = new MessageActionRow().addComponent(button6).addComponent(button7).addComponent(button8).addComponent(button9).addComponent(button10)
         let row3 = new MessageActionRow().addComponent(button11).addComponent(button12).addComponent(button13).addComponent(button14).addComponent(button15)
         let row4 = new MessageActionRow().addComponent(button16).addComponent(button17).addComponent(button18).addComponent(button19).addComponent(button20)
         let row5 = new MessageActionRow().addComponent(button21).addComponent(button22).addComponent(button23).addComponent(button24).addComponent(button25)
-
+        console.log('After message row')
         let calc = ['>> ']
         const msg = await message.channel.send(`\`\`\`autohotkey\n${calc.map(c => c)}\`\`\``, { components: [row, row2, row3, row4, row5] }).catch(err => { console.log(err); return })
 
