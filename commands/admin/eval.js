@@ -7,13 +7,13 @@ module.exports = {
     description: 'Evaluation Commands - For Testing Purposes and is only usable by the bot creator',
     category: "Admin",
     aliases: ["e"],
-    execute: (client, message, args, Client) => {
+    execute: async (client, message, args, Client) => {
         if (!trusted.includes(message.author.id)) return;
         const command = args.slice(0).join(" ")
         if (!command) return;
         message.react("✅").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
         try {
-            const evaled = eval(command).catch(err => { return })
+            const evaled = await eval(command)
             let embed = new Discord.MessageEmbed()
                 .setColor("#ffbe42")
                 .setAuthor("Evaluation", message.author.avatarURL())
