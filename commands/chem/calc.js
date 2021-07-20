@@ -56,24 +56,24 @@ console.log('After buttons')
 
         collector.on('collect', async (b) => {
             await b.clicker.fetch()
-            if (b.clicker.user.id !== message.author.id) return b.defer();
+            if (b.clicker.user.id !== message.author.id) return b.reply.defer();
             if (b.id === 'del') {
-                if (calc.length <= 1) return b.defer()
+                if (calc.length <= 1) return b.reply.defer()
                 calc.pop()
-                b.defer()
+                b.reply.defer()
                 edit(b, calc)
             } else if (b.id === 'all_clear' || b.id === 'clear_entry') {
-                if (calc.length <= 1) return b.defer()
+                if (calc.length <= 1) return b.reply.defer()
                 calc.length = 1;
-                b.defer()
+                b.reply.defer()
                 edit(b, calc)
             } else if (b.id === 'spacer') {
-                b.defer()
+                b.reply.defer()
             } else if (b.id === 'equals') {
                 let string = calc.slice(1).map(c => c).join('')
                 try {
                     let answer = math.evaluate(string)
-                    b.defer()
+                    b.reply.defer()
                     calc.splice(1)
                     answer = answer.toString().split('')
                     for (let digit of answer) {
@@ -81,7 +81,7 @@ console.log('After buttons')
                     }
                     edit(b, calc)
                 } catch (err) {
-                    b.defer()
+                    b.reply.defer()
                     calc.splice(1)
                     calc.push(err)
                     edit(b, calc)
@@ -92,7 +92,7 @@ console.log('After buttons')
                 }
             } else {
                 calc.push(b.id)
-                b.defer()
+                b.reply.defer()
                 edit(b, calc)
             }
         })
