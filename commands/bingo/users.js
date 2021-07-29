@@ -3,7 +3,7 @@ const el = new (require("quick.db")).table("elements")
 
 module.exports = {
     name: 'users',
-    description: 'View the users that have already chosen their respective element.',
+    description: 'View the users that have already chosen their respective element',
     category: "Bingo",
     usage: "!users",
     aliases: [],
