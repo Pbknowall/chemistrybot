@@ -616,5 +616,215 @@
             "206"
         ],
         "correct": "206"
+    },
+
+
+
+
+
+
+
+
+
+    
+    {
+        "question": "Electrons present in the discrete stationary states of the atom (...)",
+        "options": [
+            "Emit energy",
+            "Absorb energy",
+            "Continuously emit and absorb energy",
+            "Neither emit nor absorb energy"
+        ],
+        "correct": "Neither emit nor absorb energy"
+    },
+    {
+        "question": "Which of the following will give the haloform test?",
+        "options": [
+            "Methyl alcohol",
+            "Propanal",
+            "3-Pentanone",
+            "2-Hexanone"
+        ],
+        "correct": "2-Hexanone"
+    },
+    {
+        "question": "The pressure of an ideal gas is always (...)",
+        "options": [
+            "Less than that of a real gas",
+            "More than that of a real gas",
+            "Equal to that of a real gas",
+            "None of the above"
+        ],
+        "correct": "More than that of a real gas"
+    },
+    {
+        "question": "Which one of the following will give Fehling's test?",
+        "options": [
+            "Ethanone",
+            "Ethanol",
+            "Acetaldehyde",
+            "Polyvinyl acetate"
+        ],
+        "correct": "Acetaldehyde"
+    },
+    {
+        "question": "The radius of the first Bohr atom for hydrogen is (...)",
+        "options": [
+            "0.53 Micrometer",
+            "0.053 Picometer",
+            "0.053 Nanometer",
+            "0.53 Nanometer"
+        ],
+        "correct": "0.053 Nanometer"
+    },
+    {
+        "question": "The rate of diffusion of an ideal gas depends upon (...)",
+        "options": [
+            "Inverse to the square root of the molar mass of the gas",
+            "Inverse to the square root of the density of the gas",
+            "Inverse to the square root of the velocity of the gas particles",
+            "Both A and B"
+        ],
+        "correct": "Both A and B"
+    },
+    {
+        "question": "The existence of an element in more than one crystalline form is (...)",
+        "options": [
+            "Allotropy",
+            "Isomorphism",
+            "Isomerism",
+            "Polymorphism"
+        ],
+        "correct": "Allotropy"
+    },
+    {
+        "question": "Lithium is (...)",
+        "options": [
+            "More electropositive than the rest of group I",
+            "Less electropositive than the rest of group I",
+            "Least electronegative element in group I",
+            "None of the above"
+        ],
+        "correct": "Less electropositive than the rest of group I"
+    },
+    {
+        "question": "Which of the following is not a quantum number?",
+        "options": [
+            "Principle quantum number",
+            "Azimuthal quantum number",
+            "Magnetic quantum number",
+            "Spin quantum number"
+        ],
+        "correct": "Principle quantum number"
+    },
+    {
+        "question": "The shape of the p-orbital is (...)",
+        "options": [
+            "Complex",
+            "Spherical",
+            "Dumb-bell",
+            "Not identical"
+        ],
+        "correct": "Dumb-bell"
+    },
+    {
+        "question": "The bond angle in water is (...)",
+        "options": [
+            "109.5",
+            "107.5",
+            "105.5",
+            "104.5"
+        ],
+        "correct": "104.5"
+    },
+    {
+        "question": "The value of the general gas constant in SI units is (...)",
+        "options": [
+            "0.0821",
+            "8.314",
+            "1.989",
+            "62400"
+        ],
+        "correct": "8.314"
+    },
+    {
+        "question": "Ethene follows (...)",
+        "options": [
+            "Sp3 hybridization",
+            "Sp2 hybridization",
+            "Sp hybridization",
+            "Does not hybridize"
+        ],
+        "correct": "Sp2 hybridization"
+    },
+    {
+        "question": "Carbolic acid is known as (...)",
+        "options": [
+            "Ethanoic acid",
+            "Propanoic acid",
+            "Phenol",
+            "Benzoic acid"
+        ],
+        "correct": "Phenol"
+    },
+    {
+        "question": "Which compound is the most reactive?",
+        "options": [
+            "Ethane",
+            "Ethene",
+            "Ethyne",
+            "Benzene"
+        ],
+        "correct": "Ethene"
+    },
+    {
+        "question": "The conversion of n-hexane into benzene by heating in the presence of platinum catalyst is known as (...)",
+        "options": [
+            "Isomerization",
+            "Delakylation",
+            "Aromatization",
+            "Rearrangement"
+        ],
+        "correct": "Aromatization"
+    },
+    {
+        "question": "Oleum is also known as (...)",
+        "options": [
+            "Pyrosulphuric acid",
+            "Oil of vitriol",
+            "Sulphuric acid",
+            "Benzene sulphonic acid"
+        ],
+        "correct": "Pyrosulphuric acid"
+    },
+    {
+        "question": "The temperature of the drying zone in a rotary kiln in the industrial manufacture of cement is (...)",
+        "options": [
+            "500C",
+            "900C",
+            "1500C",
+            "150C"
+        ],
+        "correct": "500C"
+    },
+    {
+        "question": "Which of the following will have SP2 hybridization?",
+        "options": [
+            "Ethane",
+            "Ethyne",
+            "Formic acid",
+            "Methane"
+        ],
+        "correct": "Formic acid"
+    },
+    {
+        "question": "The number of molecules in 9 grams of water is (...)",
+        "options": [
+            "6.022x10^23",
+            "3.011x10^23",
+            "Infinity",
+            "There are no molecules in water"
+        ],
+        "correct": "3.011x10^23"
     }
 ]
