@@ -10,7 +10,7 @@ module.exports = {
     execute: async (client, message, args, Client) => {
         message.react("✅").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
         const e = el.get(`start_${message.guild.id}.list`)
-        if (!e.length) return Client.err(message, 'Nobody has picked an element yet.')
+        if (!e) return Client.err(message, 'Nobody has picked an element yet.')
         let list = []
         e.map(l => { if (l.user) list.push(l) })
         if (!list[0]) return Client.err(message, "Nobody Has Picked an Element Yet!")
