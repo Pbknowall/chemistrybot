@@ -41,7 +41,7 @@ client.on("ready", () => {
     client.guilds.cache.forEach(g => array.push(g.memberCount))
     let users = array.reduce((a, b) => a + b)
 
-    const activities = ["🧪 !help", "🔬 Chemical & Physical Reactions", `👨‍🔬 ${users} Users`]
+    const activities = ["🧪 !help", "🔬 Chemical & Physical Reactions!", `👨‍🔬 ${users} Users`]
     setInterval(function () {
         client.user.setActivity(activities[Math.floor(Math.random() * activities.length)], { type: "WATCHING" })
     }, 20000)
