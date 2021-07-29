@@ -7,7 +7,6 @@ module.exports = {
     usage: "!help / !help <command>",
     aliases: ["cmds", "commands"],
     execute: async (client, message, args, Client) => {
-        console.log('help')
         message.react("✅").then(r => { setTimeout(() => { r.remove().catch(err => { console.log(err); return }) }, 3000) }).catch(err => { console.log(err); return })
 
         if (!args[0]) {
