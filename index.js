@@ -13,7 +13,7 @@ const settings = new (require("quick.db")).table("settings")
 require('discord-buttons')(client)
 client.permMsg = new Discord.MessageEmbed().setDescription("❌ You don't have permission to use this command").setColor("#FF0000")
 client.commands = new Discord.Collection()
-//"token": "NzQ3NDY3NzM1ODY0MTgwODM2.X0PTkw.SpcHhdNE_YGrSnXX1_xutFJjCtw",
+//"token": "NzQ3NDY3NzM1ODY0MTgwODM2.X0PTkw.SpcHhdNE_YGrSnXX1_xutFJjCtw+++++",
 
 console.log("\n-|- ⌛ Loading Commands... -|-")
 fs.readdirSync("./commands/").forEach(folder => {
